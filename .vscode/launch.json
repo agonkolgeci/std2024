@@ -1,0 +1,308 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        // Linux
+        {
+            "name": "tp0 linux",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp0/main.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "gcc build",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "tp1 linux",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp1/main.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "gcc build",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "tp2 linux",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp2/main.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "gcc build",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "tp3 linux",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp3/main.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "gcc build",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "tp4 linux",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp4/main.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "gcc build",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "tp5 linux",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp5/main.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "gcc build",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        // MacOS
+        {
+            "name": "tp0 macos",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp0/main.out",
+            "args": [],
+            "preLaunchTask": "gcc build",
+        },
+        {
+            "name": "tp1 macos",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp1/main.out",
+            "args": [],
+            "preLaunchTask": "gcc build",
+        },
+        {
+            "name": "tp2 macos",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp2/main.out",
+            "args": [],
+            "preLaunchTask": "gcc build",
+        },
+        {
+            "name": "tp3 macos",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp3/main.out",
+            "args": [],
+            "preLaunchTask": "gcc build",
+        },
+        {
+            "name": "tp4 macos",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp4/main.out",
+            "args": [],
+            "preLaunchTask": "gcc build",
+        },
+        {
+            "name": "tp5 macos",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp5/main.out",
+            "args": [],
+            "preLaunchTask": "gcc build",
+        },
+        // Windows
+        {
+            "name": "tp0 windows",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp0/main.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "gcc build win",
+            "miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe"
+        },
+        {
+            "name": "tp1 windows",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp1/main.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "gcc build win",
+            "miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe"
+        },
+        {
+            "name": "tp2 windows",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp2/main.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "gcc build win",
+            "miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe"
+        },
+        {
+            "name": "tp3 windows",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp3/main.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "gcc build win",
+            "miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe"
+        },
+        {
+            "name": "tp4 windows",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp4/main.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "gcc build win",
+            "miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe"
+        },
+        {
+            "name": "tp5 windows",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tp5/main.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "gcc build win",
+            "miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe"
+        },
+    ]
+}

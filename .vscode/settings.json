@@ -1,0 +1,26 @@
+{
+    "files.associations": {
+        "list.h": "c",
+        "graph.h": "c",
+        "hashtable.h": "c",
+        "stack.h": "c",
+        "queue.h": "c",
+        "*.tcc": "c",
+        "deque": "c",
+        "string": "c",
+        "unordered_map": "c",
+        "vector": "c",
+        "cmath": "c",
+        "functional": "c",
+        "stdlib.h": "c",
+        "array": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "utility": "c",
+        "tree.h": "c",
+        "random": "c",
+        "hash.h": "c",
+        "acutest.h": "c",
+        "stdio.h": "c"
+    }
+}

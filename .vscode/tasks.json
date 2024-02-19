@@ -1,0 +1,67 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // GCC compile
+        {
+            "label": "gcc build",
+            "type": "shell",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-g",
+                "${file}",
+                "lib/objects/objects.c",
+                "lib/list/list.c",
+                "lib/stack/stack.c",
+                "lib/queue/queue.c",
+                "lib/tree/tree.c",
+                "lib/graph/graph.c",
+                "lib/hash/hash.c",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.out",
+                "-lm",
+                "-Wno-pointer-to-int-cast",
+                "-Wno-int-to-pointer-cast"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+
+        // GCC compile Windows
+        {
+            "label": "gcc build win",
+            "type": "cppbuild",
+            "command": "C:\\msys64\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "lib/objects/objects.c",
+                "lib/list/list.c",
+                "lib/stack/stack.c",
+                "lib/queue/queue.c",
+                "lib/tree/tree.c",
+                "lib/graph/graph.c",
+                "lib/hash/hash.c",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.out",
+                "-lm",
+                "-Wno-pointer-to-int-cast",
+                "-Wno-int-to-pointer-cast"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
