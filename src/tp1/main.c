@@ -3,7 +3,9 @@
 
 int main()
 {
-    // TODO: Implement
+    Car *mercedes = car_create("MB", "GLC", "GPL");
+
+    printf("Model of mercedes: %s", mercedes->model);
 
     return 0;
 }

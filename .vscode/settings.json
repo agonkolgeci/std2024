@@ -21,6 +21,7 @@
         "random": "c",
         "hash.h": "c",
         "acutest.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "string.h": "c"
     }
 }
