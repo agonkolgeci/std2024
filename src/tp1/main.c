@@ -7,5 +7,7 @@ int main()
 
     printf("Model of mercedes: %s", mercedes->model);
 
+    // TEST
+
     return 0;
 }
