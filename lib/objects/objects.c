@@ -53,11 +53,11 @@ void print_registry(Registry *registry) {
     for(int i = 0; i < registry->size; i++) {
         Customer *customer = registry->customers[i];
 
-        printf("------------------------------");
-        printf("ID Client: #%s", i);
-        printf("Nom du client: %s", customer->name);
-        printf("Adresse du client: %s", customer->address);
-        printf("Voiture du client: Marque: %s | Modèle: %s | Licence: %s", customer->car->brand, customer->car->model, customer->car->license);
+        printf("------------------------------\n");
+        printf("ID Client: #%d\n", i);
+        printf("Nom du client: %s\n", customer->name);
+        printf("Adresse du client: %s\n", customer->address);
+        printf("Voiture du client: Marque: %s | Modèle: %s | Licence: %s\n", customer->car->brand, customer->car->model, customer->car->license);
         printf("------------------------------");
     }
 }

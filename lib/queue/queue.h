@@ -3,12 +3,14 @@
 
 typedef struct queueNode
 {
-    // TODO: Implement
+    void *data;
+
+    struct queueNode *next;
 } QueueNode;
 
 typedef struct queue
 {
-    // TODO: Implement
+    QueueNode *first;
 } Queue;
 
 Queue *queue_create();
