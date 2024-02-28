@@ -1,6 +1,5 @@
 #include "list.h"
 #include <stdlib.h>
-#include <math.h>
 
 List *list_create() {
     List *list = malloc(sizeof(List));
@@ -60,7 +59,8 @@ void list_append(List *list, void *data) {
 }
 
 void list_insert(List *list, int index, void *data) {
-    index = fmin(index, list_size(list) + 1);
+    int size = list_size(list);
+    index = index < list_size(list) ? index : (size - 1);
 
     ListNode *prevNode = NULL;
     ListNode *nextNode = list->first;
@@ -97,8 +97,9 @@ int list_indexOf(List *list, void *data) {
 }
 
 void list_delete(List *list, int index) {
-    index = fmin(index, list_size(list) + 1);
-
+    int size = list_size(list);
+    index = index < list_size(list) ? index : (size - 1);
+    
     ListNode *prevNode = NULL;
     ListNode *targetNode = list->first;
     for(int i = 0; i < index; i++) {
