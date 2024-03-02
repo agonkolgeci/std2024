@@ -3,6 +3,9 @@
 
 Stack *stack_create() {
     Stack *stack = malloc(sizeof(Stack));
+    if(stack == NULL) {
+        return NULL;
+    }
 
     stack->first = NULL;
 
@@ -20,6 +23,9 @@ int stack_size(Stack *stack) {
 
 void stack_push(Stack *stack, void *data) {
     StackNode *newNode = malloc(sizeof(StackNode));
+    if(newNode == NULL) {
+        return;
+    }
 
     newNode->data = data;
     newNode->next = NULL;

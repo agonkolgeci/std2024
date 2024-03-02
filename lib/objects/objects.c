@@ -5,6 +5,9 @@
 
 Car *car_create(char *brand, char *model, char *license) {
     Car *car = malloc(sizeof(Car));
+    if(car == NULL) {
+        return NULL;
+    }
 
     car->brand = brand;
     car->model = model;
@@ -15,6 +18,9 @@ Car *car_create(char *brand, char *model, char *license) {
 
 Customer *customer_create(char *name, char *address) {
     Customer *customer = malloc(sizeof(Customer));
+    if(customer == NULL) {
+        return NULL;
+    }
 
     customer->name = name;
     customer->address = address;
@@ -25,6 +31,9 @@ Customer *customer_create(char *name, char *address) {
 
 Registry *registry_create(Customer **customers, int size) {
     Registry *registry = malloc(sizeof(Registry));
+    if(registry == NULL) {
+        return NULL;
+    }
 
     registry->customers = customers;
     registry->size = size;

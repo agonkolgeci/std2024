@@ -1,8 +1,13 @@
 #include <stdio.h>
 #include "../../lib/objects/objects.h"
 
-int main()
-{
+/*
+
+   This file is for debugging only.
+
+*/
+
+int main() {
     Customer *customer1 = customer_create("Agon", "Agon.Kolgeci@etu.unige.ch");
     Customer *customer2 = customer_create("Antoine", "Antoine.Maendly@etu.unige.ch");
     Customer **customers = (Customer*[]){customer1, customer2};

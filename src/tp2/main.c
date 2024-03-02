@@ -4,8 +4,13 @@
 #include "../../lib/queue/queue.h"
 #include "../../lib/stack/stack.h"
 
-void list_fn()
-{
+/*
+
+   This file is for debugging only.
+
+*/
+
+void list_fn() {
     List *list = list_create();
 
     list_append(list, (void *) 1); //0
@@ -27,8 +32,7 @@ void list_fn()
     list_destroy(list);
 }
 
-void queue_fn()
-{
+void queue_fn() {
     Queue *queue = queue_create();
 
     queue_enqueue(queue, (void *) 1);
@@ -51,8 +55,7 @@ void queue_fn()
     queue_destroy(queue);
 }
 
-void stack_fn()
-{
+void stack_fn() {
     Stack *stack = stack_create();
 
     stack_push(stack, (void *) 1);
@@ -80,8 +83,7 @@ void stack_fn()
     stack_destroy(stack);
 }
 
-int main()
-{
+int main() {
     // List
     list_fn();
 

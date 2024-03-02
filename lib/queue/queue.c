@@ -3,6 +3,9 @@
 
 Queue *queue_create() {
     Queue *queue = malloc(sizeof(Queue));
+    if(queue == NULL) {
+        return NULL;
+    }
 
     queue->first = NULL;
 
@@ -23,6 +26,9 @@ void queue_destroy(Queue *queue) {
 
 void queue_enqueue(Queue *queue, void *data) {
     QueueNode *newNode = malloc(sizeof(QueueNode));
+    if(newNode == NULL) {
+        return;
+    }
 
     newNode->data = data;
     newNode->next = NULL;

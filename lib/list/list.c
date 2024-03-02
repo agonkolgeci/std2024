@@ -3,6 +3,9 @@
 
 List *list_create() {
     List *list = malloc(sizeof(List));
+    if(list == NULL) {
+        return NULL;
+    }
 
     list->first = NULL;
 
@@ -40,6 +43,9 @@ int list_contains(List *list, void *data) {
 
 void list_append(List *list, void *data) {
     ListNode *newNode = malloc(sizeof(ListNode));
+    if(newNode == NULL) {
+        return;
+    }
 
     newNode->data = data;
     newNode->next = NULL;
@@ -70,6 +76,9 @@ void list_insert(List *list, int index, void *data) {
     }
 
     ListNode *newNode = malloc(sizeof(ListNode));
+    if(newNode == NULL) {
+        return;
+    }
 
     newNode->index = index;
     newNode->data = data;

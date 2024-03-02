@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/*
+
+   This file is for debugging only.
+
+*/
+
 int increase(int number)
 {
     return number + 1; // Type "number" ("?number" for MacOS) and enter in the debug console. Then hit "step-out"
