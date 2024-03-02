@@ -7,12 +7,14 @@
 
 typedef struct treeNode
 {
-    // TODO: Implement
+    void *data;
+    struct treeNode *left;
+    struct treeNode *right;
 } TreeNode;
 
 typedef struct tree
 {
-    // TODO: Implement
+    TreeNode *root;
 } Tree;
 
 Tree *tree_create();
