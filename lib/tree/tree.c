@@ -20,9 +20,7 @@ TreeNode *tree_search(Tree *tree, void *data, int (*cmp)(void *, void *)) {
     TreeNode *current = tree->root;
 
     while(current != NULL) {
-        int cmp_result = cmp(current->data, data);
-
-        switch (cmp_result) {
+        switch (cmp(data, current->data)) {
             case 0: {
                 return current;
             }
@@ -95,7 +93,7 @@ void tree_insert(Tree *tree, void *data, int (*cmp)(void *, void *)) {
     TreeNode *parent = NULL;
 
     while(current != NULL) {
-        switch (cmp(current->data, data)) {
+        switch (cmp(data, current->data)) {
             case 0: {
                 free(newNode);
 
@@ -118,10 +116,16 @@ void tree_insert(Tree *tree, void *data, int (*cmp)(void *, void *)) {
         }
     }
 
-    if(cmp(parent->data, data) < 0) {
-        parent->left = newNode;
-    } else {
-        parent->right = newNode;
+    switch (cmp(data, parent->data)) {
+        case -1: {
+            parent->left = newNode;
+            break;
+        }
+        
+        case 1: {
+            parent->right = newNode;
+            break;
+        }
     }
 }
 
@@ -136,12 +140,12 @@ List *tree_bfs(Tree *tree) {
 
         list_append(list, current->data);
 
-        if(current->right != NULL) {
-            queue_enqueue(queue, current->right);
-        }
-
         if(current->left != NULL) {
             queue_enqueue(queue, current->left);
+        }
+
+        if(current->right != NULL) {
+            queue_enqueue(queue, current->right);
         }
     }
 
@@ -161,12 +165,12 @@ List *tree_dfs(Tree *tree) {
 
         list_append(list, current->data);
 
-        if(current->left != NULL) {
-            stack_push(stack, current->left);
-        }
-
         if(current->right != NULL) {
             stack_push(stack, current->right);
+        }
+
+        if(current->left != NULL) {
+            stack_push(stack, current->left);
         }
     }
 
