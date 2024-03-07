@@ -3,10 +3,16 @@
 
 #include "./../list/list.h"
 
-typedef struct graph
-{
-    // TODO: Implement
+typedef struct graph {
+    int vertices;
+
+    List **adjacencies;
 } Graph;
+
+typedef struct edge {
+    int node;
+    float weight;
+} Edge;
 
 Graph *graph_create(int size);
 void graph_destroy(Graph *graph);

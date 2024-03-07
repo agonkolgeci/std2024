@@ -27,7 +27,37 @@ void dijkstra(){
     graph_destroy(graph);
 }
 
+/*
+This is a second test of a graph I retrieved from this video : https://www.youtube.com/watch?v=_lHSawdgXpI
+
+By the way, it's from this video that I drew inspiration to implement the algorithm.
+*/
+void dijkstra2() {
+    Graph* graph = graph_create(5);
+    graph_add_edge(graph, 0, 1, 4);
+    graph_add_edge(graph, 0, 2, 2);
+    graph_add_edge(graph, 1, 2, 3);
+    graph_add_edge(graph, 1, 3, 2);
+    graph_add_edge(graph, 1, 4, 3);
+    graph_add_edge(graph, 2, 1, 1);
+    graph_add_edge(graph, 2, 3, 4);
+    graph_add_edge(graph, 2, 4, 5);
+    graph_add_edge(graph, 4, 3, 1);
+    TEST_ASSERT_(graph_dijkstra(graph, 0, 1) == 3, "dijkstra2(graph, 0, 1) == 3 failed");
+    TEST_ASSERT_(graph_dijkstra(graph, 0, 2) == 2, "dijkstra2(graph, 0, 2) == 2 failed");
+    TEST_ASSERT_(graph_dijkstra(graph, 0, 3) == 5, "dijkstra2(graph, 0, 3) == 5 failed");
+    TEST_ASSERT_(graph_dijkstra(graph, 0, 4) == 6, "dijkstra2(graph, 0, 4) == 6 failed");
+    TEST_ASSERT_(graph_dijkstra(graph, 1, 2) == 3, "dijkstra2(graph, 1, 2) == 3 failed");
+    TEST_ASSERT_(graph_dijkstra(graph, 1, 3) == 2, "dijkstra2(graph, 1, 3) == 2 failed");
+    TEST_ASSERT_(graph_dijkstra(graph, 1, 4) == 3, "dijkstra2(graph, 1, 4) == 3 failed");
+    TEST_ASSERT_(graph_dijkstra(graph, 2, 3) == 3, "dijkstra2(graph, 2, 3) == 3 failed");
+    TEST_ASSERT_(graph_dijkstra(graph, 2, 4) == 4, "dijkstra2(graph, 2, 4) == 4 failed");
+    TEST_ASSERT_(graph_dijkstra(graph, 3, 4) == INT_MAX, "dijkstra2(graph, 3, 4) == INT_MAX failed");
+    graph_destroy(graph);
+}
+
 TEST_LIST = {
     { "dijkstra", dijkstra },
+    { "dijsktra_2", dijkstra2 },
     { NULL, NULL }
 };
