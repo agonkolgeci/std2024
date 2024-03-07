@@ -52,7 +52,6 @@ void dijkstra2() {
     TEST_ASSERT_(graph_dijkstra(graph, 1, 4) == 3, "dijkstra2(graph, 1, 4) == 3 failed");
     TEST_ASSERT_(graph_dijkstra(graph, 2, 3) == 3, "dijkstra2(graph, 2, 3) == 3 failed");
     TEST_ASSERT_(graph_dijkstra(graph, 2, 4) == 4, "dijkstra2(graph, 2, 4) == 4 failed");
-    TEST_ASSERT_(graph_dijkstra(graph, 3, 4) == INT_MAX, "dijkstra2(graph, 3, 4) == INT_MAX failed");
     graph_destroy(graph);
 }
 

@@ -3,6 +3,8 @@
 #include "graph.h"
 #include "./../list/list.h"
 
+#define FLT_MAX 3.40282e+38F
+
 Graph *graph_create(int size) {
     Graph *graph = malloc(sizeof(Graph));
     if(graph == NULL) {
@@ -83,7 +85,7 @@ float graph_dijkstra(Graph *graph, int sourceNode, int targetNode) {
     }
 
     for (int i = 0; i < vertices; i++) {
-        distances[i] = INT_MAX;
+        distances[i] = FLT_MAX;
         visited[i] = 0;
     }
 
@@ -113,7 +115,7 @@ float graph_dijkstra(Graph *graph, int sourceNode, int targetNode) {
         }
         
         minEdge->node = -1;
-        minEdge->weight = INT_MAX;
+        minEdge->weight = FLT_MAX;
 
         for(int i = 0; i < vertices; i++) {
             if(visited[i] == 0 && distances[i] < minEdge->weight) {
