@@ -13,6 +13,10 @@ Stack *stack_create() {
 }
 
 int stack_size(Stack *stack) {
+    if(stack == NULL) {
+        return 0;
+    }
+
     int i = 0;
     for(StackNode *node = stack->first; node != NULL; node = node->next) {
         i++;
@@ -22,6 +26,10 @@ int stack_size(Stack *stack) {
 }
 
 void stack_push(Stack *stack, void *data) {
+    if(stack == NULL) {
+        return;
+    }
+
     StackNode *newNode = malloc(sizeof(StackNode));
     if(newNode == NULL) {
         return;
@@ -43,6 +51,10 @@ void stack_push(Stack *stack, void *data) {
 }
 
 void *stack_pop(Stack *stack) {
+    if(stack == NULL) {
+        return NULL;
+    }
+
     StackNode *lastNode = stack->first;
     if(lastNode != NULL) {
         StackNode *prevNode = NULL;
@@ -68,6 +80,10 @@ void *stack_pop(Stack *stack) {
 }
 
 void stack_destroy(Stack *stack) {
+    if(stack == NULL) {
+        return;
+    }
+
     for (StackNode *node = stack->first; node != NULL;) {
         StackNode *tmp = node->next;
 

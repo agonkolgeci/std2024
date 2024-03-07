@@ -13,6 +13,10 @@ List *list_create() {
 }
 
 int list_size(List *list) {
+    if(list == NULL) {
+        return 0;
+    }
+
     int i = 0;
     for(ListNode *node = list->first; node != NULL; node = node->next) {
         i++;
@@ -22,6 +26,10 @@ int list_size(List *list) {
 }
 
 void *list_get(List *list, int index) {
+    if(list == NULL) {
+        return NULL;
+    }
+
     for(ListNode *node = list->first; node != NULL; node = node->next) {
         if(node->index == index) {
             return node->data;
@@ -32,6 +40,10 @@ void *list_get(List *list, int index) {
 }
 
 int list_contains(List *list, void *data) {
+    if(list == NULL) {
+        return 0;
+    }
+
     for(ListNode *node = list->first; node != NULL; node = node->next) {
         if(node->data == data) {
             return 1;
@@ -42,6 +54,10 @@ int list_contains(List *list, void *data) {
 }
 
 void list_append(List *list, void *data) {
+    if(list == NULL) {
+        return;
+    }
+
     ListNode *newNode = malloc(sizeof(ListNode));
     if(newNode == NULL) {
         return;
@@ -66,7 +82,9 @@ void list_append(List *list, void *data) {
 
 void list_insert(List *list, int index, void *data) {
     int size = list_size(list);
-    index = index < list_size(list) ? index : (size - 1);
+    if(list == NULL || (index < 0 || index >= size)) {
+        return;
+    }
 
     ListNode *prevNode = NULL;
     ListNode *nextNode = list->first;
@@ -96,6 +114,10 @@ void list_insert(List *list, int index, void *data) {
 }
 
 int list_indexOf(List *list, void *data) {
+    if(list == NULL) {
+        return -1;
+    }
+
     for(ListNode *node = list->first; node != NULL; node = node->next) {
         if(node->data == data) {
             return node->index;
@@ -107,8 +129,10 @@ int list_indexOf(List *list, void *data) {
 
 void list_delete(List *list, int index) {
     int size = list_size(list);
-    index = index < list_size(list) ? index : (size - 1);
-    
+    if(list == NULL || (index < 0 || index >= size)) {
+        return;
+    }
+
     ListNode *prevNode = NULL;
     ListNode *targetNode = list->first;
     for(int i = 0; i < index; i++) {
@@ -132,6 +156,10 @@ void list_delete(List *list, int index) {
 }
 
 void list_destroy(List *list) {
+    if(list == NULL) {
+        return;
+    }
+
     for (ListNode *node = list->first; node != NULL;) {
         ListNode *tmp = node->next;
 

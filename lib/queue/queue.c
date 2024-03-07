@@ -13,7 +13,11 @@ Queue *queue_create() {
 }
 
 void queue_destroy(Queue *queue) {
-    for (QueueNode *node = queue->first; node != NULL;) {
+    if(queue == NULL) {
+        return;
+    }
+
+    for(QueueNode *node = queue->first; node != NULL;) {
         QueueNode *tmp = node->next;
 
         free(node);
@@ -25,6 +29,10 @@ void queue_destroy(Queue *queue) {
 }
 
 void queue_enqueue(Queue *queue, void *data) {
+    if(queue == NULL) {
+        return;
+    }
+
     QueueNode *newNode = malloc(sizeof(QueueNode));
     if(newNode == NULL) {
         return;
@@ -46,6 +54,10 @@ void queue_enqueue(Queue *queue, void *data) {
 }
 
 void *queue_dequeue(Queue *queue) {
+    if(queue == NULL) {
+        return NULL;
+    }
+
     QueueNode *first = queue->first;
     if(first != NULL) {
         void *data = first->data;
@@ -61,6 +73,10 @@ void *queue_dequeue(Queue *queue) {
 }
 
 int queue_size(Queue *queue) {
+    if(queue == NULL) {
+        return 0;
+    }
+
     int i = 0;
     for(QueueNode *node = queue->first; node != NULL; node = node->next) {
         i++;

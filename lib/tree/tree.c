@@ -17,6 +17,10 @@ Tree *tree_create() {
 }
 
 TreeNode *tree_search(Tree *tree, void *data, int (*cmp)(void *, void *)) {
+    if(tree == NULL) {
+        return NULL;
+    }
+
     TreeNode *current = tree->root;
 
     while(current != NULL) {
@@ -44,6 +48,10 @@ TreeNode *tree_search(Tree *tree, void *data, int (*cmp)(void *, void *)) {
 }
 
 void tree_destroy(Tree *tree) {
+    if(tree == NULL) {
+        return;
+    }
+
     Stack *stack = stack_create();
     TreeNode *current = tree->root;
 
@@ -74,6 +82,10 @@ void tree_destroy(Tree *tree) {
 }
 
 void tree_insert(Tree *tree, void *data, int (*cmp)(void *, void *)) {
+    if(tree == NULL) {
+        return;
+    }
+
     TreeNode *newNode = malloc(sizeof(TreeNode));
     if(newNode == NULL) {
         return;
@@ -130,6 +142,10 @@ void tree_insert(Tree *tree, void *data, int (*cmp)(void *, void *)) {
 }
 
 List *tree_bfs(Tree *tree) {
+    if(tree == NULL) {
+        return NULL;
+    }
+
     List *list = list_create();
     Queue *queue = queue_create();
 
@@ -155,6 +171,10 @@ List *tree_bfs(Tree *tree) {
 }
 
 List *tree_dfs(Tree *tree) {
+    if(tree == NULL) {
+        return NULL;
+    }
+
     List *list = list_create();
     Stack *stack = stack_create();
 
