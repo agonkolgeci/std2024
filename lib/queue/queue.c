@@ -7,7 +7,7 @@ Queue *queue_create() {
         return NULL;
     }
 
-    queue->first = NULL;
+    queue->front = NULL;
 
     return queue;
 }
@@ -17,7 +17,7 @@ void queue_destroy(Queue *queue) {
         return;
     }
 
-    for(QueueNode *node = queue->first; node != NULL;) {
+    for(QueueNode *node = queue->front; node != NULL;) {
         QueueNode *tmp = node->next;
 
         free(node);
@@ -41,16 +41,23 @@ void queue_enqueue(Queue *queue, void *data) {
     newNode->data = data;
     newNode->next = NULL;
 
-    QueueNode *lastNode = queue->first;
-    if(lastNode != NULL) {
-        while(lastNode->next != NULL) {
-            lastNode = lastNode->next;
-        }
-
-        lastNode->next = newNode;
+    if(queue->front != NULL) {
+        queue->rear->next = newNode;
+        queue->rear = newNode;
     } else {
-        queue->first = newNode;
+        queue->front = queue->rear = newNode;
     }
+    
+    // QueueNode *lastNode = queue->front;
+    // if(lastNode != NULL) {
+    //     while(lastNode->next != NULL) {
+    //         lastNode = lastNode->next;
+    //     }
+
+    //     lastNode->next = newNode;
+    // } else {
+    //     queue->front = newNode;
+    // }
 }
 
 void *queue_dequeue(Queue *queue) {
@@ -58,13 +65,13 @@ void *queue_dequeue(Queue *queue) {
         return NULL;
     }
 
-    QueueNode *first = queue->first;
-    if(first != NULL) {
-        void *data = first->data;
-
-        queue->first = first->next;
+    QueueNode *frontNode = queue->front;
+    if(frontNode != NULL) {
+        queue->front = frontNode->next;
         
-        free(first);
+        void *data = frontNode->data;
+        
+        free(frontNode);
 
         return data;
     }
@@ -78,7 +85,7 @@ int queue_size(Queue *queue) {
     }
 
     int i = 0;
-    for(QueueNode *node = queue->first; node != NULL; node = node->next) {
+    for(QueueNode *node = queue->front; node != NULL; node = node->next) {
         i++;
     }
 

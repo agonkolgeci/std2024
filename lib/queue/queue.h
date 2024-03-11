@@ -10,7 +10,8 @@ typedef struct queueNode
 
 typedef struct queue
 {
-    QueueNode *first;
+    QueueNode *front;
+    QueueNode *rear;
 } Queue;
 
 Queue *queue_create();
