@@ -3,6 +3,8 @@
 #include "acutest.h"
 #include "./../lib/graph/graph.h"
 
+#define FLT_MAX 3.40282e+38F
+
 void dijkstra(){
     Graph* graph = graph_create(5);
     graph_add_edge(graph, 0, 1, 5);
@@ -52,6 +54,7 @@ void dijkstra2() {
     TEST_ASSERT_(graph_dijkstra(graph, 1, 4) == 3, "dijkstra2(graph, 1, 4) == 3 failed");
     TEST_ASSERT_(graph_dijkstra(graph, 2, 3) == 3, "dijkstra2(graph, 2, 3) == 3 failed");
     TEST_ASSERT_(graph_dijkstra(graph, 2, 4) == 4, "dijkstra2(graph, 2, 4) == 4 failed");
+    TEST_ASSERT_(graph_dijkstra(graph, 3, 1) == FLT_MAX, "dijkstra2(graph, 2, 4) == FLT_MAX failed");
     graph_destroy(graph);
 }
 

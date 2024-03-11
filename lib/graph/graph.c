@@ -100,11 +100,7 @@ float graph_dijkstra(Graph *graph, int sourceNode, int targetNode) {
     }
 
     float currentDistance = 0;
-    for(int step = 0; step < vertices; step++) {
-        if(currentAdjacency == NULL) {
-            break;
-        }
-
+    while(currentAdjacency != NULL) {
         for(ListNode *nearbyNode = currentAdjacency->first; nearbyNode != NULL; nearbyNode = nearbyNode->next) {
             Edge *nearbyEdge = (Edge*) nearbyNode->data;
 

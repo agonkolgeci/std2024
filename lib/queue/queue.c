@@ -47,17 +47,6 @@ void queue_enqueue(Queue *queue, void *data) {
     } else {
         queue->front = queue->rear = newNode;
     }
-    
-    // QueueNode *lastNode = queue->front;
-    // if(lastNode != NULL) {
-    //     while(lastNode->next != NULL) {
-    //         lastNode = lastNode->next;
-    //     }
-
-    //     lastNode->next = newNode;
-    // } else {
-    //     queue->front = newNode;
-    // }
 }
 
 void *queue_dequeue(Queue *queue) {
