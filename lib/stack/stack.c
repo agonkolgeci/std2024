@@ -35,19 +35,12 @@ void stack_push(Stack *stack, void *data) {
         return;
     }
 
+    StackNode *firstNode = stack->first;
+
     newNode->data = data;
-    newNode->next = NULL;
+    newNode->next = firstNode;
 
-    StackNode *lastNode = stack->first;
-    if(lastNode != NULL) {
-        while(lastNode->next != NULL) {
-            lastNode = lastNode->next;
-        }
-
-        lastNode->next = newNode;
-    } else {
-        stack->first = newNode;
-    }
+    stack->first = newNode;
 }
 
 void *stack_pop(Stack *stack) {
@@ -55,23 +48,13 @@ void *stack_pop(Stack *stack) {
         return NULL;
     }
 
-    StackNode *lastNode = stack->first;
-    if(lastNode != NULL) {
-        StackNode *prevNode = NULL;
-        while(lastNode->next != NULL) {
-            prevNode = lastNode;
-            lastNode = lastNode->next;
-        }
+    StackNode *firstNode = stack->first;
+    if(firstNode != NULL) {
+        stack->first = firstNode->next;
 
-        void *data = lastNode->data;
+        void *data = firstNode->data;
 
-        if(prevNode != NULL) {
-            prevNode->next = NULL;
-        } else {
-            stack->first = NULL;
-        }
-        
-        free(lastNode);
+        free(firstNode);
 
         return data;
     }
