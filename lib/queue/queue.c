@@ -73,10 +73,10 @@ int queue_size(Queue *queue) {
         return 0;
     }
 
-    int i = 0;
+    int size = 0;
     for(QueueNode *node = queue->front; node != NULL; node = node->next) {
-        i++;
+        size++;
     }
 
-    return i;
+    return size;
 }

@@ -17,12 +17,12 @@ int stack_size(Stack *stack) {
         return 0;
     }
 
-    int i = 0;
+    int size = 0;
     for(StackNode *node = stack->first; node != NULL; node = node->next) {
-        i++;
+        size++;
     }
 
-    return i;
+    return size;
 }
 
 void stack_push(Stack *stack, void *data) {

@@ -17,12 +17,12 @@ int list_size(List *list) {
         return 0;
     }
 
-    int i = 0;
+    int size = 0;
     for(ListNode *node = list->first; node != NULL; node = node->next) {
-        i++;
+        size++;
     }
 
-    return i;
+    return size;
 }
 
 void *list_get(List *list, int index) {
